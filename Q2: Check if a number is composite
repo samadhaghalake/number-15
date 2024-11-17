@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class CompositeNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        boolean isComposite = false;
+
+        if (num <= 1) {
+            isComposite = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    isComposite = true;
+                    break;
+                }
+            }
+        }
+
+        if (isComposite) {
+            System.out.println(num + " is a composite number.");
+        } else {
+            System.out.println(num + " is not a composite number.");
+        }
+
+        scanner.close();
+    }
+}
